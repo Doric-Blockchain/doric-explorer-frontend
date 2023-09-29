@@ -1,8 +1,8 @@
 {
-  "name": "blockscout-frontend",
+  "name": "explorer-frontend",
   "version": "1.0.0",
   "private": false,
-  "homepage": "https://github.com/blockscout/frontend#readme",
+  "homepage": "https://github.com/Doric-Blockchain/explorer#readme",
   "engines": {
     "node": "18",
     "npm": "8"
