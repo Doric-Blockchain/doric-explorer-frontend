@@ -14,7 +14,6 @@ export interface Params {
 
 interface Meta {
   resource?: ResourcePath;
-  omitSentryErrorLog?: boolean;
 }
 
 export default function useFetch() {
@@ -50,10 +49,7 @@ export default function useFetch() {
           status: response.status,
           statusText: response.statusText,
         };
-
-        if (!meta?.omitSentryErrorLog) {
-          Sentry.captureException(new Error('Client fetch failed'), { extra: { ...error, ...meta }, tags: { source: 'fetch' } });
-        }
+        Sentry.captureException(new Error('Client fetch failed'), { extra: { ...error, ...meta }, tags: { source: 'fetch' } });
 
         return response.json().then(
           (jsonError) => Promise.reject({

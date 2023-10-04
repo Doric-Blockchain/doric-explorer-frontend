@@ -26,20 +26,9 @@ export interface TokenHolders {
   next_page_params: TokenHoldersPagination | null;
 }
 
-export type TokenHolder = TokenHolderERC20ERC721 | TokenHolderERC1155;
-
-export type TokenHolderBase = {
+export type TokenHolder = {
   address: AddressParam;
   value: string;
-}
-
-export type TokenHolderERC20ERC721 = TokenHolderBase & {
-  token: TokenInfo<'ERC-20'> | TokenInfo<'ERC-721'>;
-}
-
-export type TokenHolderERC1155 = TokenHolderBase & {
-  token: TokenInfo<'ERC-1155'>;
-  token_id: string;
 }
 
 export type TokenHoldersPagination = {

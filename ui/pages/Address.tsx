@@ -11,7 +11,6 @@ import useApiQuery from 'lib/api/useApiQuery';
 import { useAppContext } from 'lib/contexts/app';
 import useContractTabs from 'lib/hooks/useContractTabs';
 import useIsMobile from 'lib/hooks/useIsMobile';
-import useIsSafeAddress from 'lib/hooks/useIsSafeAddress';
 import getQueryParamString from 'lib/router/getQueryParamString';
 import { ADDRESS_INFO, ADDRESS_TABS_COUNTERS } from 'stubs/address';
 import AddressBlocksValidated from 'ui/address/AddressBlocksValidated';
@@ -62,8 +61,6 @@ const AddressPageContent = () => {
       placeholderData: ADDRESS_TABS_COUNTERS,
     },
   });
-
-  const isSafeAddress = useIsSafeAddress(!addressQuery.isPlaceholderData && addressQuery.data?.is_contract ? hash : undefined);
 
   const contractTabs = useContractTabs(addressQuery.data);
 
@@ -152,7 +149,6 @@ const AddressPageContent = () => {
         addressQuery.data?.is_contract ? { label: 'contract', display_name: 'Contract' } : { label: 'eoa', display_name: 'EOA' },
         addressQuery.data?.implementation_address ? { label: 'proxy', display_name: 'Proxy' } : undefined,
         addressQuery.data?.token ? { label: 'token', display_name: 'Token' } : undefined,
-        isSafeAddress ? { label: 'safe', display_name: 'Multisig: Safe' } : undefined,
       ] }
       contentAfter={
         <NetworkExplorers type="address" pathParam={ hash } ml="auto" hideText={ isMobile }/>
