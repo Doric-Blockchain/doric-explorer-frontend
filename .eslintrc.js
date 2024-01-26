@@ -135,7 +135,6 @@ module.exports = {
     'eol-last': 'error',
     eqeqeq: [ 'error', 'allow-null' ],
     'id-match': [ 'error', '^[\\w$]+$' ],
-    'jsx-quotes': [ 'error', 'prefer-double' ],
     'key-spacing': [ 'error', {
       beforeColon: false,
       afterColon: true,
@@ -183,7 +182,6 @@ module.exports = {
     quotes: [ 'error', 'single', {
       allowTemplateLiterals: true,
     } ],
-    'space-before-function-paren': [ 'error', 'never' ],
     'space-before-blocks': [ 'error', 'always' ],
     'space-in-parens': [ 'error', 'never' ],
     'space-infix-ops': 'error',
@@ -238,23 +236,11 @@ module.exports = {
       props: 'never',
       children: 'never',
     } ],
-    'react/jsx-curly-spacing': [ 'error', {
-      when: 'always',
-      children: true,
-      spacing: {
-        objectLiterals: 'never',
-      },
-    } ],
     'react/jsx-equals-spacing': [ 'error', 'never' ],
     'react/jsx-fragments': [ 'error', 'syntax' ],
     'react/jsx-no-duplicate-props': 'error',
     'react/jsx-no-target-blank': 'off',
     'react/jsx-no-useless-fragment': 'error',
-    'react/jsx-tag-spacing': [ 'error', {
-      afterOpening: 'never',
-      beforeSelfClosing: 'never',
-      closingSlash: 'never',
-    } ],
     'react/jsx-wrap-multilines': [ 'error', {
       declaration: 'parens-new-line',
       assignment: 'parens-new-line',

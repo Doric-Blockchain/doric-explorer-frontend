@@ -96,7 +96,6 @@ export default function useNavItems(): ReturnType {
       blockchainNavItems = [
         txs,
         blocks,
-        topAccounts,
         verifiedContracts,
         config.features.beaconChain.isEnabled && {
           text: 'Withdrawals',
